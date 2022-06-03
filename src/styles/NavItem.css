@@ -1,0 +1,35 @@
+.nav-item {
+  transform: translateY(-200%);
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.fadeInBottom {
+  animation-name: fadeInBottom;
+}
+
+.delay0{
+  animation-delay: 0ms;
+}
+
+.delay1{
+  animation-delay: 150ms;
+}
+
+.delay2{
+  animation-delay: 300ms;
+}
+
+.delay3{
+  animation-delay: 450ms;
+}
+
+@keyframes fadeInBottom {
+  from {
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}

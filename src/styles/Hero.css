@@ -1,0 +1,20 @@
+.hero{
+  transform: translateY(10%);
+  opacity: 0.1;
+  animation-duration: 450ms;
+  animation-fill-mode: both;
+}
+
+.fadeUp{
+  animation-name: fadeUp;
+}
+
+@keyframes fadeUp{
+  from {
+    opacity: 0.1;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}

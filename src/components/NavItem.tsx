@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link, useColorModeValue, useDisclosure } from '@chakra-ui/react';
+import '../styles/NavItem.css'
 
 type Props = {
   text: string,
+  delay: string
 };
 
 function NavItem(props: Props) {
@@ -10,6 +12,7 @@ function NavItem(props: Props) {
 
   return (
     <Link
+      className={`nav-item fadeInBottom ${props.delay}`}
       px={2}
       py={1}
       rounded={'md'}

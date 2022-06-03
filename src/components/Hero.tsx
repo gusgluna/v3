@@ -7,36 +7,45 @@ import {
   Button,
   HStack,
   Image,
-  VStack
+  VStack,
+  Stack
 } from "@chakra-ui/react";
+import '../styles/Hero.css';
 
 const Hero = () => {
   return (
-    <Flex px={4} py={32} mx="auto" className="about">
-      <Box mx="auto" w={{ lg: 8 / 12, xl: 7 / 12 }} border={'1px solid red'}>
-        <HStack>
-          <chakra.h1
-            mb={3}
-            fontSize={{ base: "3xl", md: "4xl" }}
-            fontWeight="bold"
-            lineHeight="shorter"
-            color={useColorModeValue("gray.900", "white")}
-          >
-            gusgluna
-          </chakra.h1>
-          <chakra.p mb={5} color="gray.500" fontSize={{ md: "lg" }}>
-            Keep it simple, make it useful & code it clean.
-          </chakra.p>
-          <chakra.p>
-            Hello world I'm gus, a fullstack developer,
-            I started my journey learning web dev in YouTube tutorials,
-            later I complete my formation in educational platform Platzi,
-            and since that, I never stop learning.
-          </chakra.p>
-          <Box boxSize='sm'>
-            <Image src='https://bit.ly/dan-abramov' alt='Dan Abramov' borderRadius={'full'} />
-          </Box>
-        </HStack>
+    <Flex px={4} py={32} mx="auto" id="about">
+      <Box mx="auto">
+        <Stack
+          mx="auto" w={{ lg: 8 / 12, xl: 7 / 12 }}
+          direction={{ base: 'column', md: 'row' }}
+          align={{ base: 'center', md: 'space-between' }}
+          className="fadeUp hero"
+          h={'450px'}
+          border={'1px solid red'}
+        >
+
+          <VStack align={{ base: 'center', md: 'start' }}>
+            <chakra.h1
+              mb={0}
+              fontSize={{ base: "4xl", md: "xxl" }}
+              fontWeight="bold"
+              // lineHeight="shorter"
+              color={useColorModeValue("brand.100", "brand.100")}
+            >
+              gusgluna
+            </chakra.h1>
+            <chakra.p mb={5} color="gray.500" fontSize={{ md: "md" }}>
+              Keep it simple, make it useful &amp; code it clean.
+            </chakra.p>
+            <chakra.p textAlign={{ base: 'center', md: 'start' }}>
+              Hello world I'm gus, a full-stack developer starting my journey in development,
+              i like both sides front-end or back-end, also i enjoy sharing the knowledge
+              check out my channel to see my tutorials.
+            </chakra.p>
+          </VStack>
+          <Image boxSize={{ base: '150px', md: '200px' }} src='https://bit.ly/dan-abramov' alt='Dan Abramov' borderRadius={'full'} />
+        </Stack>
       </Box>
     </Flex>
   );

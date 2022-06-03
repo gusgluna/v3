@@ -4,7 +4,7 @@ import { MoonIcon, SunIcon, CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import NavItem from './NavItem';
 import gusgluna_logo from "../assets/logos/gusgluna.svg";
 
-const Links: string[] = ['About', 'Work', 'Skills', 'Contact'];
+const Links: string[] = ['About', 'Skills', 'Projects', 'Contact'];
 
 function NavBar() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -13,7 +13,7 @@ function NavBar() {
   return (
     <>
       <Box as='header'>
-        <Flex as='nav' h={16} alignItems={'center'} justifyContent={{ base: 'center', md: 'center' }}>
+        <Flex as='nav' h={16} alignItems={'center'} justifyContent={{ base: 'center', md: 'center' }} className={'fadeUp'}>
           <IconButton
             size={'md'}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
@@ -30,8 +30,8 @@ function NavBar() {
             spacing={4}
             display={{ base: 'none', md: 'flex' }}
           >
-            <NavItem text={Links[0]} />
-            <NavItem text={Links[1]} />
+            <NavItem text={Links[0]} delay={'delay0'}/>
+            <NavItem text={Links[1]} delay={'delay1'}/>
           </HStack>
 
           <Image src={gusgluna_logo} boxSize='60px' objectFit='cover' alt='gusgluna' ml={4} mr={4} />
@@ -39,8 +39,8 @@ function NavBar() {
             spacing={4}
             display={{ base: 'none', md: 'flex' }}
           >
-            <NavItem text={Links[2]} />
-            <NavItem text={Links[3]} />
+            <NavItem text={Links[2]} delay={'delay2'}/>
+            <NavItem text={Links[3]} delay={'delay3'}/>
           </HStack>
 
           <IconButton
