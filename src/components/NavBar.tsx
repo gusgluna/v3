@@ -12,7 +12,7 @@ function NavBar() {
 
   return (
     <>
-      <Box as='header'>
+      <Box as='header' position={'fixed'} w={'100vw'} zIndex={2} bg={'white'}>
         <Flex as='nav' h={16} alignItems={'center'} justifyContent={{ base: 'center', md: 'center' }} className={'fadeUp'}>
           <IconButton
             size={'md'}
@@ -23,7 +23,7 @@ function NavBar() {
             position={'absolute'}
             top={2}
             left={2}
-            zIndex={10}
+            zIndex={6}
           />
 
           <HStack
@@ -56,7 +56,7 @@ function NavBar() {
         </Flex>
 
         {isOpen ? (
-          <Box pb={4} display={{ base: 'block', md: 'none' }} zIndex={5} height={'100vh'} width={'100vw'} position={'absolute'} top={0} bg={colorMode === 'light' ? 'white' : 'gray.800'}>
+          <Box pb={4} display={{ base: 'block', md: 'none' }} zIndex={4} height={'100vh'} width={'100vw'} position={'absolute'} top={0} bg={colorMode === 'light' ? 'white' : 'gray.800'}>
             <Stack as={'nav'} spacing={4} mt={16} padding={4}>
               {Links.map((link) => (
                 <Link
