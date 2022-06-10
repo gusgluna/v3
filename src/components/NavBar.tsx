@@ -12,7 +12,7 @@ function NavBar() {
 
   return (
     <>
-      <Box as='header' position={'fixed'} w={'100vw'} zIndex={2} bg={'white'}>
+      <Box as='header' position={'fixed'} w={'100vw'} zIndex={2} bg={`${colorMode === 'light' ? 'white': 'gray.800'}`}>
         <Flex as='nav' h={16} alignItems={'center'} justifyContent={{ base: 'center', md: 'center' }} className={'fadeUp'}>
           <IconButton
             size={'md'}

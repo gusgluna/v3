@@ -2,7 +2,7 @@ import { extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
   fontSizes: {
-    xxl: '50px',
+    xxl: '60px',
   },
   colors: {
     brand: {

@@ -1,5 +1,5 @@
 {
-  "name": "gusgluna",
+  "name": "gusgluna_web",
   "private": true,
   "version": "0.0.0",
   "author": "gusgluna",
@@ -21,6 +21,7 @@
     "scrollreveal": "^4.0.9"
   },
   "devDependencies": {
+    "@types/node": "^17.0.41",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@types/scrollreveal": "^0.0.8",
