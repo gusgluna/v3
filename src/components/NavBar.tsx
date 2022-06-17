@@ -3,8 +3,7 @@ import { useColorMode, Button, Box, IconButton, Flex, Link, Image, useDisclosure
 import { MoonIcon, SunIcon, CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import NavItem from './NavItem';
 import gusgluna_logo from "../assets/logos/gusgluna.svg";
-
-const Links: string[] = ['About', 'Skills', 'Projects', 'Contact'];
+import { navBarLinks } from '../config';
 
 function NavBar() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -30,8 +29,8 @@ function NavBar() {
             spacing={4}
             display={{ base: 'none', md: 'flex' }}
           >
-            <NavItem text={Links[0]} delay={'delay0'}/>
-            <NavItem text={Links[1]} delay={'delay1'}/>
+            <NavItem text={navBarLinks[0]} delay={'delay0'}/>
+            <NavItem text={navBarLinks[1]} delay={'delay1'}/>
           </HStack>
 
           <Image src={gusgluna_logo} boxSize='60px' objectFit='cover' alt='gusgluna' ml={4} mr={4} />
@@ -39,8 +38,8 @@ function NavBar() {
             spacing={4}
             display={{ base: 'none', md: 'flex' }}
           >
-            <NavItem text={Links[2]} delay={'delay2'}/>
-            <NavItem text={Links[3]} delay={'delay3'}/>
+            <NavItem text={navBarLinks[2]} delay={'delay2'}/>
+            <NavItem text={navBarLinks[3]} delay={'delay3'}/>
           </HStack>
 
           <IconButton
@@ -58,7 +57,7 @@ function NavBar() {
         {isOpen ? (
           <Box pb={4} display={{ base: 'block', md: 'none' }} zIndex={4} height={'100vh'} width={'100vw'} position={'absolute'} top={0} bg={colorMode === 'light' ? 'white' : 'gray.800'}>
             <Stack as={'nav'} spacing={4} mt={16} padding={4}>
-              {Links.map((link) => (
+              {navBarLinks.map((link) => (
                 <Link
                   px={2}
                   py={1}

@@ -36,6 +36,8 @@ const tools: string[] = [
   'Chakra-UI',
 ];
 
+const navBarLinks: string[] = ['About', 'Skills', 'Projects', 'Contact']
+
 
 const courses: { title: string, link: string; }[] = [
   {
@@ -80,4 +82,4 @@ const projects: projectsType = [
   },
 ]
 
-export { srConfig, languages, tools, courses, projects };
+export { srConfig, languages, tools, courses, projects, navBarLinks };

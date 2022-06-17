@@ -1,29 +1,15 @@
-import { useRef, useEffect, useId } from 'react';
-import sr from 'scrollreveal';
-import {
-  chakra,
-  Flex,
-  Box,
-  Stack,
-  HStack,
-  VStack,
-  OrderedList,
-  ListItem,
-  ListIcon,
-  List,
-  Link,
-  useColorModeValue
-} from '@chakra-ui/react';
-import { ChevronRightIcon, ExternalLinkIcon } from '@chakra-ui/icons';
+import React from 'react';
+import { useEffect } from 'react';
+import { Stack } from '@chakra-ui/react';
+import { srConfig, languages, tools, courses } from '../config';
 import FullPageWrapper from './FullPageWrapper';
-import { srConfig, languages, tools, courses } from '../config'
-
-
+import SkillsBox from './SkillsBox';
+import sr from 'scrollreveal';
 
 function Skills() {
-  const revealCard1: any = useRef(null);
-  const revealCard2: any = useRef(null);
-  const revealCard3: any = useRef(null);
+  const revealCard1: any = React.createRef();
+  const revealCard2: any = React.createRef();
+  const revealCard3: any = React.createRef();
 
   useEffect(() => {
     sr().reveal(revealCard1.current, srConfig(250));
@@ -38,48 +24,24 @@ function Skills() {
         spacing={{ base: 2, md: 4 }}
         maxW='1000px'
       >
-        <Box padding={2} ref={revealCard1} border={'2px solid'} borderColor='brand.100' flex={'1 1 0'} borderRadius={16}>
-          <chakra.h3 fontSize={{ base: 'lg', md: '2xl' }} color='brand.100'>Languages &amp; Frameworks</chakra.h3>
-          <List spacing={{base:-1, md:0}}>
-            {languages.map((lang: string) => {
-              return (
-                <ListItem key={lang} fontSize={{ base: 'sm', md: 'md' }}>
-                  <ListIcon as={ChevronRightIcon} color='brand.100' />
-                  {lang}
-                </ListItem>
-              );
-            })}
-          </List>
-        </Box>
 
-        <Box padding={2} ref={revealCard2} border={'2px solid'} borderColor='brand.100' flex={'1 1 0'} borderRadius={16}>
-          <chakra.h3 fontSize={{ base: 'lg', md: '2xl' }} color='brand.100' textAlign={'center'}>Tools</chakra.h3>
-          <List spacing={{base:-1, md:0}}>
-            {tools.map((tool: string) => {
-              return (
-                <ListItem key={tool} fontSize={{ base: 'sm', md: 'md' }}>
-                  <ListIcon as={ChevronRightIcon} color='brand.100' />
-                  {tool}
-                </ListItem>
-              );
-            })}
-          </List>
-        </Box>
+        <SkillsBox
+          title="Languages &amp; Frameworks"
+          arrList={languages}
+          ref={revealCard1}
+        />
 
-        <Box padding={2} ref={revealCard3} border={'2px solid'} borderColor='brand.100' flex={'1 1 0'} borderRadius={16}>
-          <chakra.h3 fontSize={{ base: 'lg', md: '2xl' }} color='brand.100' textAlign={'center'}>Courses and Certifications</chakra.h3>
-          <List spacing={{base:-1, md:0}}>
-            {courses.map((course: { title: string, link: string; }) => {
-              return (
-                <ListItem key={course.title} fontSize={{ base: 'sm', md: 'md' }}>
-                  <ListIcon as={ChevronRightIcon} color='brand.100' />
-                  {course.title}
-                  <Link href={course.link} isExternal><ExternalLinkIcon mx='4px' /></Link>
-                </ListItem>
-              );
-            })}
-          </List>
-        </Box>
+        <SkillsBox
+          title="Tools &amp; Technologies"
+          arrList={tools}
+          ref={revealCard2}
+        />
+
+        <SkillsBox
+          title="Courses &amp; Certifications"
+          arrList={courses}
+          ref={revealCard3}
+        />
 
       </Stack>
     </FullPageWrapper>

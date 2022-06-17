@@ -32,9 +32,6 @@ const Hero = () => {
         >
           gusgluna
         </chakra.h1>
-        {/* <chakra.p my={4} color="gray.500" fontSize={{ md: "md" }}>
-          Keep it simple, make it useful &amp; code it clean.
-        </chakra.p> */}
         <chakra.p textAlign={{ base: 'center', md: 'start' }} maxW='750px' mt={4} py={4} fontSize='xl'>
           I'm a full-stack developer starting my journey in development,
           i like both sides front-end or back-end, also i enjoy sharing the knowledge
