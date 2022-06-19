@@ -1,9 +1,9 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { Stack } from '@chakra-ui/react';
-import { srConfig, languages, tools, courses } from '../config';
-import FullPageWrapper from './FullPageWrapper';
-import SkillsBox from './SkillsBox';
+import { srConfig, languages, tools, courses } from '@/config';
+import FullPageWrapper from '@/components/FullPageWrapper';
+import SkillsBox from '@/components/SkillsBox';
 import sr from 'scrollreveal';
 
 function Skills() {

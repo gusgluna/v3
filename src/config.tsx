@@ -74,11 +74,11 @@ type projectsType = {
 const projects: projectsType = [
   {
     title: 'Pokedex',
-    description: 'Lorem ipsum',
+    description: 'Lorem ipsum dolo set',
     tags: ['JavaScript', 'Webpack'],
     linkRepo: '#',
     linkDeployed: '#',
-    img:'#'
+    img:'../assets/img/pokedex_v2.jpg'
   },
 ]
 

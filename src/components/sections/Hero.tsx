@@ -9,8 +9,8 @@ import {
   VStack,
   Stack
 } from "@chakra-ui/react";
-import FullPageWrapper from './FullPageWrapper';
-import '../styles/Hero.css';
+import FullPageWrapper from '@/components/FullPageWrapper';
+import '@/styles/Hero.css';
 
 const Hero = () => {
   return (

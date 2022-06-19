@@ -1,6 +1,5 @@
 import React from 'react';
-import { useRef, useEffect } from 'react';
-import sr from 'scrollreveal';
+import { ReactNode } from 'react';
 import {
   chakra,
   Flex,
@@ -12,30 +11,25 @@ import {
   ListIcon,
   useColorModeValue
 } from '@chakra-ui/react';
-import FullPageWrapper from './FullPageWrapper';
-import { srConfig, projects } from '../config';
 import { ChevronRightIcon, ExternalLinkIcon } from '@chakra-ui/icons';
+import { projects } from '../config';
 
+interface Props {
+  children?: ReactNode;
+  // text: string;
+}
 
+type Ref = HTMLDivElement;
 
-
-function ProjectCard() {
-  const revealItem: any = useRef(null);
-  useEffect(() => {
-    sr().reveal(revealItem.current, srConfig(350));
-  }, []);
-
+const ProjectCard = React.forwardRef<Ref, Props>((props, ref) => {
   return (
-    <Box padding={2} ref={revealItem} border={'2px solid'} borderColor='brand.100' flex={'1 1 0'} borderRadius={16}>
-      <chakra.h3 fontSize={{ base: 'lg', md: '2xl' }} color='brand.100'>Languages &amp; Frameworks</chakra.h3>
-      <List spacing={{ base: -1, md: 0 }}>
-        <ListItem fontSize={{ base: 'sm', md: 'md' }}>
-          <ListIcon as={ChevronRightIcon} color='brand.100' />
-          Lorem
-        </ListItem>
-      </List>
+    <Box padding={2} ref={ref} border={'2px solid'} borderColor='brand.100' flex={'1 1 0'} borderRadius={16}>
+      <chakra.h3 fontSize={{ base: 'lg', md: '2xl' }} color='brand.100'>{projects[0].title}</chakra.h3>
+      <chakra.p>
+        {projects[0].description}
+      </chakra.p>
     </Box>
   );
-}
+});
 
 export default ProjectCard;

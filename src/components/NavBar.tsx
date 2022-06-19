@@ -1,4 +1,3 @@
-import React from 'react';
 import { useColorMode, Button, Box, IconButton, Flex, Link, Image, useDisclosure, HStack, Stack, useColorModeValue } from '@chakra-ui/react';
 import { MoonIcon, SunIcon, CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import NavItem from './NavItem';

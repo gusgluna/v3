@@ -1,28 +1,19 @@
 import { useRef, useEffect } from 'react';
+import React from 'react';
 import sr from 'scrollreveal';
-import {
-  chakra,
-  Flex,
-  Box,
-  Stack,
-  VStack,
-  List,
-  ListItem,
-  ListIcon,
-  useColorModeValue
-} from '@chakra-ui/react';
-import FullPageWrapper from './FullPageWrapper';
-import { srConfig, projects } from '../config';
-import { ChevronRightIcon, ExternalLinkIcon } from '@chakra-ui/icons';
-import ProjectCard from './ProjectCard'
+import { Stack } from '@chakra-ui/react';
+import FullPageWrapper from '@/components/FullPageWrapper';
+import { srConfig, projects } from '@/config';
+import ProjectCard from '@/components/ProjectCard';
 
 
 
 function Projects() {
-  const revealItem: any = useRef(null);
+  const revealItem: any = React.createRef();
   useEffect(() => {
     sr().reveal(revealItem.current, srConfig(350));
   }, []);
+
   return (
     <FullPageWrapper id='projects'>
       <Stack
@@ -30,7 +21,10 @@ function Projects() {
         spacing={{ base: 2, md: 4 }}
         maxW='1000px'
       >
-        <ProjectCard></ProjectCard>
+        <ProjectCard
+          ref={revealItem}
+        // text="lorem ipsum dolo"
+        />
       </Stack>
     </FullPageWrapper>
   );
