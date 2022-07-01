@@ -1,18 +1,8 @@
-import { ReactNode } from 'react';
 import React from 'react';
-import {
-  chakra,
-  Box,
-  ListItem,
-  ListIcon,
-  List,
-  Link,
-  useColorModeValue,
-} from '@chakra-ui/react';
+import { chakra, Box, ListItem, ListIcon, List, Link, useColorModeValue } from '@chakra-ui/react';
 import { ChevronRightIcon, ExternalLinkIcon } from '@chakra-ui/icons';
 
 interface Props {
-  children?: ReactNode;
   title: string;
   arrList: any[];
 }

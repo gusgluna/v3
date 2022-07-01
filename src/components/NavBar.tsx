@@ -1,17 +1,52 @@
 import { useColorMode, Button, Box, IconButton, Flex, Link, Image, useDisclosure, HStack, Stack, useColorModeValue } from '@chakra-ui/react';
 import { MoonIcon, SunIcon, CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
+import React from 'react';
+import { useEffect, useRef } from 'react';
 import NavItem from './NavItem';
-import gusgluna_logo from "../assets/logos/gusgluna.svg";
-import { navBarLinks } from '../config';
+import gusgluna_logo from "@/assets/logos/gusgluna.svg";
+import { navBarLinks, srConfig } from '@/config';
+import sr from 'scrollreveal';
+
+const navItemConfig = (delay: number) => {
+  return ({
+    origin: 'bottom',
+    distance: '20px',
+    duration: 500,
+    delay: delay,
+    rotate: { x: 0, y: 0, z: 0 },
+    opacity: 0,
+    scale: 1,
+    container: ".navBar",
+    easing: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
+    mobile: true,
+    reset: false,
+    useDelay: 'always',
+    viewFactor: 0.25,
+    viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
+  });
+
+};
 
 function NavBar() {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const rev1: any = useRef(null);
+  const rev2: any = useRef(null);
+  const rev3: any = useRef(null);
+  const rev4: any = useRef(null);
+
+  useEffect(() => {
+    sr().reveal(rev1.current, navItemConfig(200));
+    sr().reveal(rev2.current, navItemConfig(300));
+    sr().reveal(rev3.current, navItemConfig(400));
+    sr().reveal(rev4.current, navItemConfig(500));
+
+  }, []);
 
   return (
     <>
-      <Box as='header' position={'fixed'} w={'100vw'} zIndex={2} bg={`${colorMode === 'light' ? 'white': 'gray.800'}`}>
-        <Flex as='nav' h={16} alignItems={'center'} justifyContent={{ base: 'center', md: 'center' }} className={'fadeUp'}>
+      <Box as='header' position={'fixed'} w={'100vw'} zIndex={2} bg={`${colorMode === 'light' ? 'white' : 'gray.800'}`}>
+        <Flex as='nav' h={16} alignItems={'center'} justifyContent={{ base: 'center', md: 'center' }} className={'navBar'}>
           <IconButton
             size={'md'}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
@@ -28,8 +63,8 @@ function NavBar() {
             spacing={4}
             display={{ base: 'none', md: 'flex' }}
           >
-            <NavItem text={navBarLinks[0]} delay={'delay0'}/>
-            <NavItem text={navBarLinks[1]} delay={'delay1'}/>
+            <NavItem text={navBarLinks[0]} ref={rev1} />
+            <NavItem text={navBarLinks[1]} ref={rev2} />
           </HStack>
 
           <Image src={gusgluna_logo} boxSize='60px' objectFit='cover' alt='gusgluna' ml={4} mr={4} />
@@ -37,8 +72,8 @@ function NavBar() {
             spacing={4}
             display={{ base: 'none', md: 'flex' }}
           >
-            <NavItem text={navBarLinks[2]} delay={'delay2'}/>
-            <NavItem text={navBarLinks[3]} delay={'delay3'}/>
+            <NavItem text={navBarLinks[2]} ref={rev3} />
+            <NavItem text={navBarLinks[3]} ref={rev4} />
           </HStack>
 
           <IconButton
@@ -64,7 +99,7 @@ function NavBar() {
                   _hover={{
                     color: colorMode === 'light' ? 'brand.100' : 'white',
                     textDecoration: 'none',
-                    bg: colorMode === 'light' ?'gray.200': 'gray.700',
+                    bg: colorMode === 'light' ? 'gray.200' : 'gray.700',
                   }}
                   href={`#${link.toLowerCase()}`}
                   onClick={isOpen ? onClose : onOpen}

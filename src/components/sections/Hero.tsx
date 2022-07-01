@@ -10,9 +10,20 @@ import {
   Stack
 } from "@chakra-ui/react";
 import FullPageWrapper from '@/components/FullPageWrapper';
-import '@/styles/Hero.css';
+import React, { useEffect, useRef } from 'react';
+// import '@/styles/Hero.css';
+import sr from 'scrollreveal';
+import { srConfig } from "@/config";
+
+
+
 
 const Hero = () => {
+  const heroRef: any = useRef(null);
+  useEffect(() => {
+    sr().reveal(heroRef.current, srConfig(450));
+  }, []);
+
   return (
     <FullPageWrapper id='about'>
       <VStack
@@ -20,6 +31,7 @@ const Hero = () => {
         alignItems={{ base: 'center', md: 'start' }}
         p={4}
         className="fadeUp hero"
+        ref={heroRef}
       >
         <chakra.p color="gray.500">
           Hello World I am...

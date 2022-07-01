@@ -1,3 +1,6 @@
+import pokedex from '@/assets/img/pokedex_v2.jpg';
+import { type } from 'os';
+
 function srConfig(delay: number) {
   return ({
     origin: 'bottom',
@@ -36,7 +39,7 @@ const tools: string[] = [
   'Chakra-UI',
 ];
 
-const navBarLinks: string[] = ['About', 'Skills', 'Projects', 'Contact']
+const navBarLinks: string[] = ['About', 'Skills', 'Projects', 'Contact'];
 
 
 const courses: { title: string, link: string; }[] = [
@@ -65,21 +68,21 @@ const courses: { title: string, link: string; }[] = [
 type projectsType = {
   title: string,
   description: string,
-  tags:string[],
-  linkRepo:string,
-  linkDeployed:string,
-  img:string
-}[]
+  tags: string[],
+  linkRepo: string,
+  linkDeployed: string,
+  img: any;
+}[];
 
 const projects: projectsType = [
   {
     title: 'Pokedex',
-    description: 'Lorem ipsum dolo set',
-    tags: ['JavaScript', 'Webpack'],
-    linkRepo: '#',
-    linkDeployed: '#',
-    img:'../assets/img/pokedex_v2.jpg'
+    description: 'I code a Pokedex using the pokeAPI, whit vanilla JS, Bootstrap and HTML. Deploy on Netlify with Webpack.',
+    tags: ['HTML','JavaScript', 'Webpack'],
+    linkRepo: 'https://github.com/gusgluna/pokedex_v2',
+    linkDeployed: 'https://agitated-heisenberg-d4fc96.netlify.app/',
+    img: pokedex
   },
-]
+];
 
 export { srConfig, languages, tools, courses, projects, navBarLinks };

@@ -1,31 +1,35 @@
 import React from 'react';
-import { Link, useColorModeValue, useDisclosure } from '@chakra-ui/react';
-import '../styles/NavItem.css'
+import { ReactNode } from 'react';
+import { Link, useColorModeValue, useDisclosure, Box } from '@chakra-ui/react';
 
+type Ref = HTMLDivElement;
 type Props = {
   text: string,
-  delay: string
 };
 
-function NavItem(props: Props) {
-
+const NavItem = React.forwardRef<Ref, Props>((props, ref) => {
 
   return (
-    <Link
-      className={`nav-item fadeInBottom ${props.delay}`}
-      px={2}
-      py={1}
-      rounded={'md'}
-      _hover={{
-        color: useColorModeValue("brand.100", "white"),
-        textDecoration: 'none',
-        bg: useColorModeValue('gray.200', 'gray.700'),
-      }}
-      href={`#${props.text.toLocaleLowerCase()}`}
-    >
-      {props.text}
-    </Link>
+    <Box ref={ref}>
+      <Link
+        px={2}
+        py={1}
+        rounded={'md'}
+        _hover={{
+          color: useColorModeValue("brand.100", "white"),
+          textDecoration: 'none',
+          bg: useColorModeValue('gray.200', 'gray.700'),
+        }}
+        href={`#${props.text.toLocaleLowerCase()}`}
+      >
+        {props.text}
+      </Link>
+    </Box>
   );
-}
+});
+
+
+
+
 
 export default NavItem;

@@ -10,7 +10,6 @@ function FullPageWrapper({ id, children }: any) {
       h={'100vh'}
       justifyContent={'center'}
       alignItems={'center'}
-      // border="1px solid red"
       id={id}
     >
       {children}
