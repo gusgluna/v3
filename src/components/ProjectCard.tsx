@@ -3,21 +3,17 @@ import { ReactNode } from 'react';
 import {
   Box,
   Stack,
-  VStack,
   Image,
   Icon,
-  List,
   Link,
-  ListItem,
   Text,
   Heading,
-  ListIcon,
   Tag,
   TagLabel,
   useColorModeValue,
   HStack
 } from '@chakra-ui/react';
-import { ChevronRightIcon, ExternalLinkIcon } from '@chakra-ui/icons';
+import { ExternalLinkIcon } from '@chakra-ui/icons';
 
 const GitHubIcon = (props:any) => (
   <Icon viewBox='0 0 496 512' {...props}>
@@ -42,15 +38,14 @@ interface Props {
 
 type Ref = HTMLDivElement;
 
-
-
 const ProjectCard = React.forwardRef<Ref, Props>((props, ref) => {
   return (
     <Box
       maxW={'350px'}
       w={'full'}
+      height={'480px'}
       bg={useColorModeValue('white', 'gray.900')}
-      boxShadow={'2xl'}
+      boxShadow={'lg'}
       rounded={'md'}
       p={6}
       ref={ref}
@@ -95,10 +90,10 @@ const ProjectCard = React.forwardRef<Ref, Props>((props, ref) => {
           fontFamily={'body'}>
           {props.project.title}
         </Heading>
-        <Text color={'gray.500'}>
+        <Text color={'gray.500'} h={'110px'}>
           {props.project.description}
         </Text>
-        <HStack>
+        <HStack justifyContent={'center'}>
           <Link href={props.project.linkDeployed} isExternal><ExternalLinkIcon mx='4px' /></Link>
           <Link href={props.project.linkRepo} isExternal><GitHubIcon mx='4px' /></Link>
         </HStack>

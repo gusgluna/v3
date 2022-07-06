@@ -1,5 +1,6 @@
 import pokedex from '@/assets/img/pokedex_v2.jpg';
-import { type } from 'os';
+import wordle from '@/assets/img/wordle_gusgluna.jpg';
+import calculator from '@/assets/img/calculator.jpg';
 
 function srConfig(delay: number) {
   return ({
@@ -21,7 +22,7 @@ function srConfig(delay: number) {
 
 const languages: string[] = [
   'JavaScript & Node',
-  'HTMl & CSS',
+  'HTML & CSS',
   'React',
   'Express',
   'SQL / PostgreSQL',
@@ -74,15 +75,33 @@ type projectsType = {
   img: any;
 }[];
 
+
+
 const projects: projectsType = [
   {
     title: 'Pokedex',
     description: 'I code a Pokedex using the pokeAPI, whit vanilla JS, Bootstrap and HTML. Deploy on Netlify with Webpack.',
-    tags: ['HTML','JavaScript', 'Webpack'],
+    tags: ['HTML', 'JavaScript', 'Webpack'],
     linkRepo: 'https://github.com/gusgluna/pokedex_v2',
     linkDeployed: 'https://agitated-heisenberg-d4fc96.netlify.app/',
     img: pokedex
   },
+  {
+    title: 'Wordle Clone',
+    description: 'I code a Wordle clone whit React.js, Deploy on Netlify.',
+    tags: ['React', 'JavaScript', 'Webpack'],
+    linkRepo: 'https://github.com/gusgluna/wordle-clone',
+    linkDeployed: 'https://poetic-duckanoo-ad1534.netlify.app/',
+    img: wordle
+  },
+  {
+    title: 'Calculator',
+    description: 'I code a calculator with React using hooks like useReducer, useContext',
+    tags: ['React', 'JavaScript', 'Webpack'],
+    linkRepo: 'https://github.com/gusgluna/calculator-reactjs',
+    linkDeployed: 'https://stunning-sunburst-fba57a.netlify.app/',
+    img: calculator
+  },
 ];
 
-export { srConfig, languages, tools, courses, projects, navBarLinks };
+export { srConfig, languages, tools, courses, projects, navBarLinks};
