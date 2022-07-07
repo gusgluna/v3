@@ -26,7 +26,7 @@ function Skills() {
         <chakra.h2
           mt={{base: 4, md: 0}}
           mb={{ base: 0, md: 4 }}
-          fontSize={{ base: "4xl", md: "4xl" }}
+          fontSize={"4xl"}
           fontWeight="bold"
           color={useColorModeValue("brand.100", "brand.100")}
         >

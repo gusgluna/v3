@@ -18,7 +18,6 @@ function Projects() {
 
   useEffect(() => {
     sr().reveal(revealItem.current, srConfig(350));
-
     sr().reveal(revealItem2.current, srConfig(350));
   }, []);
 

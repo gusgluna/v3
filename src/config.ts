@@ -30,6 +30,7 @@ const languages: string[] = [
   'Python',
   'Java'
 ];
+
 const tools: string[] = [
   'Git & GitHub',
   'NPM',
@@ -41,7 +42,6 @@ const tools: string[] = [
 ];
 
 const navBarLinks: string[] = ['About', 'Skills', 'Projects', 'Contact'];
-
 
 const courses: { title: string, link: string; }[] = [
   {
@@ -75,6 +75,13 @@ type projectsType = {
   img: any;
 }[];
 
+const socialNetworks: {title:string, link:string}[]=[
+  {title: 'Twitter', link:'https://twitter.com/gusgluna'},
+  {title: 'Linkedin', link:'https://www.linkedin.com/in/gusgluna/'},
+  {title: 'Github', link:'https://github.com/gusgluna'},
+  {title: 'Mail', link:'mailto:gusgluna@gmail.com'},
+]
+
 
 
 const projects: projectsType = [
@@ -104,4 +111,4 @@ const projects: projectsType = [
   },
 ];
 
-export { srConfig, languages, tools, courses, projects, navBarLinks};
+export { srConfig, languages, tools, courses, projects, navBarLinks, socialNetworks};
