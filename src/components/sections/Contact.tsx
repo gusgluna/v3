@@ -40,6 +40,7 @@ function Contact() {
         </chakra.p>
         <Flex w={'100%'} alignItems={'center'} justifyContent={'space-evenly'}
 
+          borderRadius={6}
           boxShadow={'lg'}
           p={2} border={'1px solid'} borderColor={'brand.100'} direction={{ base: 'column', md: 'row' }}>
           {socialNetworks.map((network) => {

@@ -1,3 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 html {
   scroll-behavior: smooth !important;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+.fullPage {
+  overflow: hidden;
+  position: relative;
+}
+
+.bgColor::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100vw;
+  height: 100vw;
+  right: -60vw;
+  top: 0px;
+  background-color: #00bfb2;
+  transform: rotate(-60deg);
+  z-index: -10;
 }

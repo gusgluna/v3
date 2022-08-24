@@ -14,6 +14,7 @@ import React, { useEffect, useRef } from 'react';
 // import '@/styles/Hero.css';
 import sr from 'scrollreveal';
 import { srConfig } from "@/config";
+import gus from "../../assets/img/gus-removebg.png";
 
 
 
@@ -33,45 +34,63 @@ const Hero = () => {
   }, []);
 
   return (
-    <FullPageWrapper id='about'>
-      <VStack
-        maxW='1000px'
-        alignItems={{ base: 'center', md: 'start' }}
-        p={4}
-      // ref={rev1}
-      >
-        <chakra.p color="gray.500" ref={rev1}>
-          Hello World I am...
-        </chakra.p>
-        <chakra.h1
-          mt={0}
-          fontSize={{ base: "4xl", md: "xxl" }}
-          fontWeight="bold"
-          color={useColorModeValue("brand.100", "brand.100")}
-          ref={rev2}
+    <FullPageWrapper id='about' bgColor>
+      <Stack direction={['column', 'row']}>
+        <VStack
+          maxW='1000px'
+          alignItems={{ base: 'center', md: 'start' }}
+          p={4}
+        // ref={rev1}
         >
-          gusgluna
-        </chakra.h1>
-        <chakra.p textAlign={{ base: 'center', md: 'start' }} maxW='750px' mt={4} py={4} fontSize='xl' ref={rev3}>
-          I'm a full-stack developer starting my journey in development,
-          i like both sides front-end and back-end, I have a YouTube chanel to share the knowledge
-          check out my channel.
-        </chakra.p>
-        <Box ref={rev4}>
-          <Button my={4} colorScheme='teal' variant='outline'>
-            Checkout my Resume
-          </Button>
-        </Box>
+          <chakra.p color="gray.500" ref={rev1}>
+            Hello World I am...
+          </chakra.p>
+          <chakra.h1
+            letterSpacing={"0.4rem"}
+            mt={0}
+            fontSize={{ base: "4xl", md: "xxl" }}
+            fontWeight="bolder"
+            color={useColorModeValue("brand.100", "brand.100")}
+            ref={rev2}
+          >
+            {"Gus"}
+          </chakra.h1>
+          <chakra.p
+            textAlign={{ base: 'center', md: 'start' }}
+            maxW='600px'
+            mt={4}
+            py={4}
+            fontSize={{ base: "lg", md: 'xl' }}
+            ref={rev3}>
+            A full-stack developer codding in
+            <chakra.span color={"brand.200"} fontWeight={"bold"}> JavaScript</chakra.span>, building things for the web
+            using <chakra.span color={"brand.200"} fontWeight={"bold"}>React </chakra.span>
+            and <chakra.span color={"brand.200"} fontWeight={"bold"}>Express </chakra.span>
+            for the back-end, I'm a self-taught developer, and I'm learning something new every day.
+          </chakra.p>
+          <Box ref={rev4}>
+            <Button
+              my={4}
+              // colorScheme='teal'
+              color={"brand.100"}
+              borderColor={"brand.100"}
+              variant='outline'>
+              My Resume
+            </Button>
+          </Box>
 
+        </VStack>
         <Image
-          boxSize={{ base: '150px', md: '200px' }}
-          src='https://bit.ly/dan-abramov'
-          alt='Dan Abramov'
-          borderRadius={'full'}
+          src={gus}
+          alt='gusgluna'
+          borderRadius={"2xl"}
           alignSelf='center'
           ref={rev5}
+          height={{ base: "150px", md: "250px" }}
+          mr={"4"}
+        // background={useColorModeValue("brand.100", "#ffffff")}
         />
-      </VStack>
+      </Stack>
     </FullPageWrapper>
 
   );

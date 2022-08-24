@@ -1,10 +1,10 @@
 import { Flex } from "@chakra-ui/react";
 
-function FullPageWrapper({ id, children }: any) {
+function FullPageWrapper({ id, children, bgColor }: any) {
   return (
     <Flex
       as={'section'}
-      className={'fullPage'}
+      className={`fullPage ${bgColor ? "bgColor" : ""}`}
       mx="auto"
       w={'100%'}
       h={'100vh'}

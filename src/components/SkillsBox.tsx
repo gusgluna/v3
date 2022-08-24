@@ -25,7 +25,7 @@ const SkillsBox = React.forwardRef<Ref, Props>((props, ref) => {
             props.arrList.map((course: { title: string, link: string; }) => {
               return (
                 <ListItem key={course.title} fontSize={{ base: 'sm', md: 'md' }}>
-                  <ListIcon as={ChevronRightIcon} color='brand.100' />
+                  <ListIcon as={ChevronRightIcon} color='brand.200' />
                   {course.title}
                   <Link href={course.link} isExternal><ExternalLinkIcon mx='4px' /></Link>
                 </ListItem>
@@ -35,7 +35,7 @@ const SkillsBox = React.forwardRef<Ref, Props>((props, ref) => {
             props.arrList.map((tool: string) => {
               return (
                 <ListItem key={tool} fontSize={{ base: 'sm', md: 'md' }}>
-                  <ListIcon as={ChevronRightIcon} color='brand.100' />
+                  <ListIcon as={ChevronRightIcon} color='brand.200' />
                   {tool}
                 </ListItem>
               );

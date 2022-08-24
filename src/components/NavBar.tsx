@@ -3,7 +3,7 @@ import { MoonIcon, SunIcon, CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import React from 'react';
 import { useEffect, useRef } from 'react';
 import NavItem from './NavItem';
-import gusgluna_logo from "@/assets/logos/gusgluna.svg";
+import gusgluna_logo from "@/assets/logos/logo2.svg";
 import { navBarLinks, srConfig } from '@/config';
 import sr from 'scrollreveal';
 
@@ -36,10 +36,10 @@ function NavBar() {
   const rev4: any = useRef(null);
 
   useEffect(() => {
-    sr().reveal(rev1.current, navItemConfig(200));
-    sr().reveal(rev2.current, navItemConfig(300));
-    sr().reveal(rev3.current, navItemConfig(400));
-    sr().reveal(rev4.current, navItemConfig(500));
+    sr().reveal(rev1.current, { ...srConfig(200), container: ".navBar" });
+    sr().reveal(rev2.current, { ...srConfig(300), container: ".navBar" });
+    sr().reveal(rev3.current, { ...srConfig(400), container: ".navBar" });
+    sr().reveal(rev4.current, { ...srConfig(500), container: ".navBar" });
 
   }, []);
 

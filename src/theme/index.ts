@@ -1,4 +1,4 @@
-import { extendTheme } from '@chakra-ui/react'
+import { extendTheme } from '@chakra-ui/react';
 
 const theme = extendTheme({
   fontSizes: {
@@ -8,10 +8,10 @@ const theme = extendTheme({
     brand: {
       50: "#cbebff",
       80: "#97d8ff",
-      100: "#1c4c96",
-      200: "#144969",
+      100: "#00bfb2",
+      200: "#f58a07",
     },
   }
-})
+});
 
-export default theme
+export default theme;
