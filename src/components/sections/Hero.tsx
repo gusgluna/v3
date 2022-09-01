@@ -7,11 +7,11 @@ import {
   HStack,
   Image,
   VStack,
-  Stack
+  Stack,
+  Link
 } from "@chakra-ui/react";
 import FullPageWrapper from '@/components/FullPageWrapper';
 import React, { useEffect, useRef } from 'react';
-// import '@/styles/Hero.css';
 import sr from 'scrollreveal';
 import { srConfig } from "@/config";
 import gus from "../../assets/img/gus-removebg.png";
@@ -42,11 +42,11 @@ const Hero = () => {
           p={4}
         // ref={rev1}
         >
-          <chakra.p color="gray.500" ref={rev1}>
+          <chakra.p color="brand.200" ref={rev1}>
             Hello World I am...
           </chakra.p>
           <chakra.h1
-            letterSpacing={"0.4rem"}
+            letterSpacing={"0.3rem"}
             mt={0}
             fontSize={{ base: "4xl", md: "xxl" }}
             fontWeight="bolder"
@@ -63,20 +63,22 @@ const Hero = () => {
             fontSize={{ base: "lg", md: 'xl' }}
             ref={rev3}>
             A full-stack developer codding in
-            <chakra.span color={"brand.200"} fontWeight={"bold"}> JavaScript</chakra.span>, building things for the web
+            <chakra.span color={"brand.200"} fontWeight={"bold"}> JavaScript</chakra.span>, building things for the internet
             using <chakra.span color={"brand.200"} fontWeight={"bold"}>React </chakra.span>
-            and <chakra.span color={"brand.200"} fontWeight={"bold"}>Express </chakra.span>
-            for the back-end, I'm a self-taught developer, and I'm learning something new every day.
+            and <chakra.span color={"brand.200"} fontWeight={"bold"}>Express </chakra.span>, I'm a self-taught developer, and I'm learning something new every day.
           </chakra.p>
           <Box ref={rev4}>
-            <Button
-              my={4}
-              // colorScheme='teal'
-              color={"brand.100"}
-              borderColor={"brand.100"}
-              variant='outline'>
-              My Resume
-            </Button>
+            <Link href="/gusgluna_cv.pdf" target={"_blank"}>
+              <Button
+                my={4}
+                // colorScheme='teal'
+                color={"brand.100"}
+                borderColor={"brand.100"}
+                variant='outline'
+              >
+                My Resume
+              </Button>
+            </Link>
           </Box>
 
         </VStack>

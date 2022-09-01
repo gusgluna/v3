@@ -14,13 +14,35 @@ html {
 
 .bgColor::after {
   content: "";
-  display: block;
+  transform-origin: top right;
+  background-color: #00bfb2;
   position: absolute;
   width: 100vw;
-  height: 100vw;
-  right: -60vw;
+  height: 100vh;
+  right: 0px;
   top: 0px;
-  background-color: #00bfb2;
-  transform: rotate(-60deg);
+  clip-path: polygon(100% 0, 100% 100%, 30% 100%);
   z-index: -10;
+  animation: appear 1.3s ease;
+}
+
+@media only screen and (max-width: 480px) {
+  .bgColor::after {
+    clip-path: polygon(100% 50%, 100% 100%, 0% 100%);
+  }
+}
+
+@keyframes appear {
+  0% {
+    transform: translateY(20%);
+    opacity: 0%;
+  }
+  60% {
+    transform: translateY(20%);
+    opacity: 0%;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 100%;
+  }
 }

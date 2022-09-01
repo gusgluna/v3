@@ -9,7 +9,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper';
 import 'swiper/css';
 import "swiper/css/pagination";
-import '@/styles/Projects.css'
+import '@/styles/Projects.css';
 
 
 function Projects() {
@@ -31,7 +31,7 @@ function Projects() {
           mb={{ base: 0, md: 4 }}
           fontSize={{ base: "4xl", md: "4xl" }}
           fontWeight="bold"
-          color={useColorModeValue("brand.100", "brand.100")}
+          color={"brand.200"}
         > My Projects</chakra.h2>
         <Stack
           direction={{ base: 'column', md: 'row' }}
@@ -40,16 +40,16 @@ function Projects() {
           ref={revealItem2}
           overflow={'hidden'}
           padding={4}
-          display={{base: 'none', md: 'flex'}}
+          display={{ base: 'none', md: 'flex' }}
         >
           {projects.map((project) => {
             return (
               <ProjectCard project={project} key={project.title} />
             );
           })}
-          </Stack>
+        </Stack>
         <Stack
-          display={{base: 'block', md: 'none'}}
+          display={{ base: 'block', md: 'none' }}
           spacing={{ base: 2, md: 4 }}
           maxW='1000px'
           ref={revealItem}
@@ -57,7 +57,7 @@ function Projects() {
         >
           <Box
             w={'350px'}
-            display={{base: 'block', md: 'none'}}
+            display={{ base: 'block', md: 'none' }}
           >
             <Swiper
               spaceBetween={1}
@@ -71,7 +71,7 @@ function Projects() {
               {projects.map((project) => {
                 return (
                   <SwiperSlide key={project.title}>
-                    <ProjectCard project={project}/>
+                    <ProjectCard project={project} />
                   </SwiperSlide>
                 );
               })}
